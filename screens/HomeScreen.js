@@ -1,13 +1,15 @@
 
 import React from 'react';
-import {View, Text, Button} from 'react-native';
+import {View, Text, Button, StyleSheet} from 'react-native';
+
+import FloatingButton from '../custom-components/buttons/FloatingButton'
 
 const HomeScreen = ({navigation}) => {
     return (
-        <View>
+        <View style={styles.screenContainer}>
             <Text>This is the home screen</Text>
-            <Button 
-				title="Go to profile page"
+            <FloatingButton
+				title="+"
 				onPress= {()=> 
 					navigation.navigate('Profile')
 				}
@@ -15,5 +17,12 @@ const HomeScreen = ({navigation}) => {
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    screenContainer: {
+        flex:1,
+        padding:16
+    }
+});
 
 export default HomeScreen;
